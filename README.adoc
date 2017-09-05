@@ -1,0 +1,10 @@
+== Simple PCM Audio player for Arduino101 and similar (Intel Curie chip) ==
+
+Deployed for the fist time for @amicoleo wedding :)
+
+== Make it run ==
+
+Create a 16bit, 16000Hz wav file using Audacity, get its filesize and upload on the 101 using the uploader sketch
+
+Then, connect a buzzer with by placing its "data" pin on pin6 (I had a three legs one so I powered it from pins 4 and 5).
+Upload the player and enjoy the tune!
