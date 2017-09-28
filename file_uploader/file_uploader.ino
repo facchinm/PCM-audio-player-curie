@@ -11,17 +11,16 @@ void setup() {
   Serial.begin(9600);
 
   // wait for Arduino Serial Monitor
-  while (!Serial) ;
+  	while (!Serial);
   delay(100);
 
   // Init. SPI Flash chip
   if (!SerialFlash.begin(ONBOARD_FLASH_SPI_PORT, ONBOARD_FLASH_CS_PIN)) {
-    Serial.println("Unable to access SPI Flash chip");
+        Serial.println("Unable to access SPI Flash chip");
   }
 
   SerialFlash.eraseAll();
   while (!SerialFlash.ready());
-
 
   // Create the file if it doesn't exist
   if (!create_if_not_exists(filename)) {
@@ -47,7 +46,6 @@ bool create_if_not_exists (const char *filename) {
 int idx = 0;
 
 void loop() {
-  // put your main code here, to run repeatedly:
   if (Serial.available()) {
     char c = Serial.read();
     file.write(&c, 1);
